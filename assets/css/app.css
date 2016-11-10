@@ -33,6 +33,11 @@ textarea {
     font-family: inherit;
     font-size: inherit;
 }
+.helptext{
+    display: block;
+    font-size: 0.8em;
+    color: #f90505
+}
 
 
 /* Grid */
@@ -44,6 +49,20 @@ textarea {
     padding: 0 20px;
     position: relative;
     width: 100%;
+}
+
+
+/* Message */
+#messages p{
+  border-radius: 4px;
+  color: black;
+  margin 0 0 3em;
+  padding 0.5em 1em;
+  text-align center;
+}
+
+#messages .success {
+  background-color: #2ecc71;
 }
 
 

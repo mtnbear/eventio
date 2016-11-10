@@ -1,0 +1,11 @@
+{% extends '_partials/base.html' %}
+
+{% block content %}
+<h1>SignUp</h1>
+
+<form  method="post">
+  {% csrf_token %}
+  {{ user_create_form.as_p}}
+  <button type="submit" name="Login">SignUp</button>
+</form>
+{% endblock content %}

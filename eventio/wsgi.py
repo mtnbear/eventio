@@ -10,7 +10,9 @@ https://docs.djangoproject.com/en/1.10/howto/deployment/wsgi/
 import os
 
 from django.core.wsgi import get_wsgi_application
+from whitenosie.django import DjangoWhiteNosie
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "eventio.settings")
 
 application = get_wsgi_application()
+application = DjangoWhiteNosie(application)

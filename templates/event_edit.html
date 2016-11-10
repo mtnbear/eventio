@@ -1,0 +1,24 @@
+{% extends '_partials/base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/2.0.5/flatpickr.airbnb.min.css" />
+{% endblock head %}
+
+{% block content %}
+    <h1>Edit Event</h1>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Edit Event</button>
+    </form>
+{% endblock content %}
+
+{% block scripts %}
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/2.0.5/flatpickr.min.js"></script>
+    <script>
+        flatpickr(
+            '#id_start_time',
+            { minDate: 'today', enableTime: true, }
+        );
+    </script>
+{% endblock %}

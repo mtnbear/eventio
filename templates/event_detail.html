@@ -25,5 +25,32 @@
             {% endif %}
         </dd>
     </dl>
+    {% if event.owner == user %}
+    <p>
+        <a href="{% url 'edit_event' event.pk %}">Edit Event</a>
+        <br>
+        <br>
+        <a class="delete" href="{% url 'event_delete' event.pk %}">Delete Event</a>
+    </p>
 
+
+
+    {% endif %}
 {% endblock content %}
+
+
+{% block scripts %}
+<script>
+  var deleteButton = document.querySelector('a.delete');
+
+  deleteButton.addEventListener('click', function(e) {
+    var confirmed = window.confirm('Do you want to delete the event');
+
+    if ( !confirmed ) {
+      e.preventDefault();
+      return false;
+    }
+  });
+</script>
+
+{% end script %}
